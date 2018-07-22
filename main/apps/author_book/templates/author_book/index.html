@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+           
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+            <style>
+                
+                button{width: 70px;
+                      height: 30px;
+                }
+            </style>
+    <title>
+        Survey Form
+    </title>
+    </head>
+    <body>
+        <main role="main">
+        <h2>SURVEY FORM</h2>
+        <form action="/index" method="POST">
+            {% csrf_token %}
+            {% for user in users %}
+                <span>{{ user.first_name }} {{ user.last_name }}</span>
+            {% endfor %}
+            <!-- <div class="row">
+                <div class="col-md-6 mb-3">
+                    <label for="surveyform1">Your Name :</label>
+                    <input type="text" class="form-control" id ="name" name="name" placeholder="your name" value="">
+                    <label for="surveyform1">Dojo Location :</label>
+                    <input type="text" class="form-control" id="location" name="location" placeholder="your location" value="">
+                    <label for="surveyform1">Favorite Language :</label>
+                    <input type="text" class="form-control" id="language" name="language" placeholder="programming language" value="">
+                    <label for="surveyform1">Comment(optional):</label>
+                    <input type="text" class="form-control" id="comment" name="comment" placeholder="your comment" value="">
+                </div>
+               
+            </div> -->
+            <button class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>
+        </form>     
+        </main>
+    </body>
+</html>
+
